@@ -1,11 +1,10 @@
 package preclaw.pl.joketellinglib;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class JokeClass {
     ArrayList<String> jokes = new ArrayList<String>();
-
+    int numOfJokes=0;
     public JokeClass(){
         jokes.add("Q: What does networking seal say?\n" +
                 "\n" +
@@ -16,5 +15,8 @@ public class JokeClass {
         jokes.add("There are only 10 types of people in the world: those who understand binary, and those who don't.");
     }
 
-
+        public String GetJokes(){
+        numOfJokes = jokes.size();
+        return jokes.get((int) (Math.random()* numOfJokes));
+        }
 }
