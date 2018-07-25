@@ -6,7 +6,9 @@
         <activity
             android:name=".JokeActivity"
             android:label="@string/title_activity_joke"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:allowBackup="true"
+            ></activity>
     </application>
 
 </manifest>
