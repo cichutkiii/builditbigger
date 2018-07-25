@@ -22,7 +22,7 @@ public class AsyncTaskTest {
             MainActivity.class);
 
     @Test
-    public void changeText_sameActivity() {
+    public void getJoke_Activity() {
         onView(withId(R.id.tellJoke))
                 .perform(click());
         onView(withId(R.id.joke_tv))
