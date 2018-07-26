@@ -20,16 +20,16 @@ import preclaw.pl.joketellinglib.JokeClass;
 )
 public class MyEndpoint {
 
-//    @ApiMethod(name = "sayHi")
-//    public MyBean sayHi(@Named("name") String name) {
+//    @ApiMethod(name = "GetJokeFromEndpoint")
+//    public MyBean GetJokeFromEndpoint(@Named("name") String name) {
 //        MyBean response = new MyBean();
 //        response.setData("Hi, " + name);
 //
 //        return response;
 //    }
 
-    @ApiMethod(name = "sayHi")
-    public MyBean sayHi() {
+    @ApiMethod(name = "GetJokeFromEndpoint")
+    public MyBean GetJokeFromEndpoint() {
         MyBean response = new MyBean();
         JokeClass jokeTellingLib = new JokeClass();
         response.setData(jokeTellingLib.GetJokes());

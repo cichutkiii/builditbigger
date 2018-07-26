@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class JokeActivity extends AppCompatActivity {
 
+    static String JOKE_KEY = "joke";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,11 +18,14 @@ public class JokeActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        Bundle bundle = getIntent().getExtras();
-        String joke = bundle.getString("AJOKE");
         TextView tv = findViewById(R.id.joke_tv);
-        tv.setText(joke);
+        Bundle bundle = getIntent().getExtras();
+        if(getIntent().hasExtra(JOKE_KEY)){
+            String joke = bundle.getString(JOKE_KEY);
+
+            tv.setText(joke);
+        }
+
 
     }
 

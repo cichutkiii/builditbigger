@@ -18,6 +18,7 @@ import recipies.preclaw.pl.libraryactivity.JokeActivity;
 class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
+    static String JOKE_KEY = "joke";
 
     @Override
     protected String doInBackground(Context... params) {
@@ -40,7 +41,7 @@ class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
 
 
         try {
-            return myApiService.sayHi().execute().getData();
+            return myApiService.getJokeFromEndpoint().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
@@ -48,9 +49,8 @@ class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
         Intent intent = new Intent(context, JokeActivity.class);
-        intent.putExtra("AJOKE",result);
+        intent.putExtra(JOKE_KEY,result);
         context.startActivity(intent);
     }
 }
